@@ -10,8 +10,8 @@ class PhoneBook
 private:
 	Contact contacts[8];
 	int length;
-	void displayContactInfo();
-	void displayContactRowByIndex(int index, char separator, int cellwidth);
+	void contactInfo();
+	void contactRowInfo(int index, char separator, int cellwidth);
 	void printBook();
 
 public:

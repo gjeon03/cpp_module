@@ -5,15 +5,17 @@ PhoneBook::PhoneBook()
 	this->length = 0;
 }
 
-void	PhoneBook::displayContactInfo() {
+void PhoneBook::contactInfo()
+{
 	int index;
+
 	std::cout << "Enter index of a contact: ";
 	std::cin >> index;
 	if (std::cin.fail())
 	{
 		std::cin.clear();
 		std::cin.ignore(10000, '\n');
-		std::cout<<"You have entered wrong input"<<std::endl;
+		std::cout << "You have entered wrong input" << std::endl;
 		return;
 	}
 	if (index <= 0 || index > this->length)
@@ -22,40 +24,40 @@ void	PhoneBook::displayContactInfo() {
 		this->contacts[index - 1].printcontact();
 }
 
-void	PhoneBook::displayContactRowByIndex(int index, char separator, int cellwidth) {
+void PhoneBook::contactRowInfo(int index, char separator, int cellwidth)
+{
 	std::cout << std::setw(cellwidth) << index + 1;
 	contacts[index].printshortinfo(separator, cellwidth);
 }
 
-void	PhoneBook::printBook() {
+void PhoneBook::printBook()
+{
 	int cellwidth = 10;
 	char separator = '|';
-	std::cout << std::setw(cellwidth) << "index" << separator << \
-	std::setw(cellwidth) << "first name" << separator << \
-	std::setw(cellwidth) << "last name" << separator <<
-	std::setw(cellwidth) << "nickname" << separator << std::endl;
+
+	std::cout << std::setw(cellwidth) << "index"
+			  << separator << std::setw(cellwidth) << "first name"
+			  << separator << std::setw(cellwidth) << "last name"
+			  << separator << std::setw(cellwidth) << "nickname"
+			  << separator << std::endl;
 	int index = 0;
-	while (index < this->length)
+	while (index < (this->length > 7 ? 8 : this->length))
 	{
-		displayContactRowByIndex(index, separator, cellwidth);
+		contactRowInfo(index, separator, cellwidth);
 		index++;
 	}
 }
 
-void	PhoneBook::addcontact()
+void PhoneBook::addcontact()
 {
-	if (length == 8)
-		std::cout << "PhoneBook is fulled\n";
-	else
-	{
-		Contact newContact;
-		newContact.fillContact();
-		this->contacts[length] = newContact;
-		length++;
-	}
+	Contact newContact;
+
+	newContact.fillContact();
+	this->contacts[length % 8] = newContact;
+	length++;
 }
 
-void	PhoneBook::findcontact()
+void PhoneBook::findcontact()
 {
 	if (this->length == 0)
 	{
@@ -63,6 +65,6 @@ void	PhoneBook::findcontact()
 		return;
 	}
 	this->printBook();
-	this->displayContactInfo();
+	this->contactInfo();
 	return;
 }

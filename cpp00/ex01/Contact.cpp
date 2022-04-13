@@ -25,15 +25,18 @@ void Contact::printcontact()
 	std::cout << "darkest_secret: " << this->darkest_secret << std::endl;
 }
 
-std::string Contact::alignfield(std::string field, int cellwidth)
+std::string Contact::align(std::string str, int cellwidth)
 {
-	if ((int)field.size() > cellwidth)
-		return (field.substr(0, cellwidth - 1) + ".");
+	if ((int)str.size() > cellwidth)
+		return (str.substr(0, cellwidth - 1) + ".");
 	else
-		return (std::string(cellwidth - field.size(), ' ') + field);
+		return (std::string(cellwidth - str.size(), ' ') + str);
 }
 
 void Contact::printshortinfo(char separator, int cellwidth)
 {
-	std::cout << separator << alignfield(this->first_name, cellwidth) << separator << alignfield(this->last_name, cellwidth) << separator << alignfield(this->nickname, cellwidth) << separator << std::endl;
+	std::cout << separator << align(this->first_name, cellwidth)
+			  << separator << align(this->last_name, cellwidth)
+			  << separator << align(this->nickname, cellwidth)
+			  << separator << std::endl;
 }

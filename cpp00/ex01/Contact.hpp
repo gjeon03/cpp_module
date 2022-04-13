@@ -19,7 +19,7 @@ private:
 	std::string underwear_color;
 	std::string darkest_secret;
 
-	std::string alignfield(std::string field, int cellwidth);
+	std::string align(std::string str, int cellwidth);
 
 public:
 	void fillContact();

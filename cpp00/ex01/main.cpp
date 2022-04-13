@@ -7,7 +7,7 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "enter command: ";
+		std::cout << "Enter a command(ADD or SEARCH oe EXIT)\n";
 		std::cin >> cmd;
 		if (cmd == "ADD")
 			book.addcontact();
