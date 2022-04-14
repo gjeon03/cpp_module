@@ -10,13 +10,13 @@ int main(void)
 		std::cout << "Enter a command(ADD or SEARCH oe EXIT)\n";
 		std::cin >> cmd;
 		if (cmd == "ADD")
-			book.addcontact();
+			book.addContact();
 		else if (cmd == "SEARCH")
-			book.findcontact();
+			book.findContact();
 		else if (cmd == "EXIT")
 			break;
 		else
-			std::cout << "invalid command. please enter ADD, SEARCH or EXIT\n";
+			std::cout << "Please enter ADD, SEARCH or EXIT\n";
 	}
 	return (0);
 }

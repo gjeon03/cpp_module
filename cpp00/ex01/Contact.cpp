@@ -16,7 +16,7 @@ void Contact::fillContact()
 	std::cout << "Contact is created\n";
 }
 
-void Contact::printcontact()
+void Contact::printContact()
 {
 	std::cout << "first_name: " << this->first_name << std::endl;
 	std::cout << "last_name: " << this->last_name << std::endl;
@@ -33,7 +33,7 @@ std::string Contact::align(std::string str, int cellwidth)
 		return (std::string(cellwidth - str.size(), ' ') + str);
 }
 
-void Contact::printshortinfo(char separator, int cellwidth)
+void Contact::printShortInfo(char separator, int cellwidth)
 {
 	std::cout << separator << align(this->first_name, cellwidth)
 			  << separator << align(this->last_name, cellwidth)

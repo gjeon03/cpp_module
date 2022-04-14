@@ -11,13 +11,12 @@ private:
 	Contact contacts[8];
 	int length;
 	void contactInfo();
-	void contactRowInfo(int index, char separator, int cellwidth);
 	void printBook();
 
 public:
 	PhoneBook();
-	void addcontact();
-	void findcontact();
+	void addContact();
+	void findContact();
 };
 
 #endif

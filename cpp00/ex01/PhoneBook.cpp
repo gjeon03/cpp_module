@@ -18,16 +18,10 @@ void PhoneBook::contactInfo()
 		std::cout << "You have entered wrong input" << std::endl;
 		return;
 	}
-	if (index <= 0 || index > this->length)
+	if (index <= 0 || index > (this->length > 7 ? 8 : this->length))
 		std::cout << "Index out of range\n";
 	else
-		this->contacts[index - 1].printcontact();
-}
-
-void PhoneBook::contactRowInfo(int index, char separator, int cellwidth)
-{
-	std::cout << std::setw(cellwidth) << index + 1;
-	contacts[index].printshortinfo(separator, cellwidth);
+		this->contacts[index - 1].printContact();
 }
 
 void PhoneBook::printBook()
@@ -43,12 +37,13 @@ void PhoneBook::printBook()
 	int index = 0;
 	while (index < (this->length > 7 ? 8 : this->length))
 	{
-		contactRowInfo(index, separator, cellwidth);
+		std::cout << std::setw(cellwidth) << index + 1;
+		this->contacts[index].printShortInfo(separator, cellwidth);
 		index++;
 	}
 }
 
-void PhoneBook::addcontact()
+void PhoneBook::addContact()
 {
 	Contact newContact;
 
@@ -57,7 +52,7 @@ void PhoneBook::addcontact()
 	length++;
 }
 
-void PhoneBook::findcontact()
+void PhoneBook::findContact()
 {
 	if (this->length == 0)
 	{
