@@ -11,4 +11,5 @@ int main()
 	zombieNew->announce();
 	randomChump("randomChump");
 	delete zombieHeap;
+	return (0);
 }
