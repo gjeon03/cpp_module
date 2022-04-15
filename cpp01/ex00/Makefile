@@ -12,7 +12,7 @@ OBJS = $(addprefix ./, $(addsuffix .o, $(FILES)))
 
 all: $(NAME)
 
-./%.o:  ./%.c
+./%.o:  ./%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

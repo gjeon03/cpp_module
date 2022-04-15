@@ -17,6 +17,9 @@ int main(void)
 			break;
 		else
 			std::cout << "Please enter ADD, SEARCH or EXIT\n";
+		if (!std::cin.good())
+			break;
 	}
+	system("leaks myphonebook");
 	return (0);
 }
