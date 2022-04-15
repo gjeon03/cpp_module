@@ -1,6 +1,6 @@
-NAME = brain
+NAME = violence
 
-FILES = main
+FILES = main Weapon HumanA HumanB
 
 CC = c++
 RM = rm -fr
